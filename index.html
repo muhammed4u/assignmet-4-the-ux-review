@@ -8,24 +8,44 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <input type="checkbox" id="theme-toggle" style="display:none;">
     <div class="page">
         <!-- Navigation -->
         <nav class="nav-wrapper">
             <div class="nav-container">
-                <a href="/" class="logo">
+                <a href="#" class="logo">
                     The UX <span class="review">Review</span>
                 </a>
                 <div class="nav-links">
-                    <a href="/">HOME</a>
+                    <a href="#">HOME</a>
                     <span class="star">★</span>
-                    <a href="/articles">LATEST ARTICLES</a>
+                    <a href="#">LATEST ARTICLES</a>
                     <span class="star">★</span>
-                    <a href="/authors">AUTHORS</a>
+                    <a href="#">AUTHORS</a>
                     <span class="star">★</span>
-                    <a href="/community">COMMUNITY</a>
+                    <a href="#">COMMUNITY</a>
                 </div>
-                <a href="/subscribe" class="subscribe-btn">SUBSCRIBE NOW</a>
-                <button class="menu-toggle">MENU</button>
+                <div class="theme-toggle">
+                    <label for="theme-toggle">
+                        <div class="toggle-track">
+                            <div class="toggle-sun">🌞</div>
+                            <div class="toggle-moon">🌙</div>
+                        </div>
+                    </label>
+                </div>
+                <a href="#" class="subscribe-btn">SUBSCRIBE NOW</a>
+                <button class="menu-toggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <a href="#">HOME</a>
+                <a href="#">LATEST ARTICLES</a>
+                <a href="#">AUTHORS</a>
+                <a href="#">COMMUNITY</a>
+                <a href="#" class="mobile-subscribe">SUBSCRIBE NOW</a>
             </div>
         </nav>
 
@@ -49,10 +69,10 @@
                     </div>
                     
                     <div class="hero-buttons">
-                        <a href="/start" class="hero-btn start-btn">
+                        <a href="#" class="hero-btn start-btn">
                             🚀 START READING
                         </a>
-                        <a href="/watch" class="hero-btn watch-btn">
+                        <a href="#" class="hero-btn watch-btn">
                             ▶ WATCH INTRO
                         </a>
                     </div>
@@ -346,11 +366,11 @@
                     <div class="footer-section">
                         <h4>CATEGORIES</h4>
                         <ul>
-                            <li><a href="/tech">TECH</a></li>
-                            <li><a href="/design">DESIGN</a></li>
-                            <li><a href="/culture">CULTURE</a></li>
-                            <li><a href="/opinion">OPINION</a></li>
-                            <li><a href="/tutorials">TUTORIALS</a></li>
+                            <li><a href="#">TECH</a></li>
+                            <li><a href="#">DESIGN</a></li>
+                            <li><a href="#">CULTURE</a></li>
+                            <li><a href="#">OPINION</a></li>
+                            <li><a href="#">TUTORIALS</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
@@ -364,14 +384,19 @@
                 </div>
                 <div class="footer-bottom">
                     <div class="copyright">© 2025 The UX Review. ALL RIGHTS RESERVED. STAY BRUTAL.</div>
-                    <nav class="footer-nav">
-                        <a href="/privacy">PRIVACY POLICY</a>
-                        <a href="/terms">TERMS OF USE</a>
-                        <a href="/cookies">COOKIE POLICY</a>
-                    </nav>
                 </div>
             </div>
         </footer>
     </div>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+    </script>
 </body>
 </html>

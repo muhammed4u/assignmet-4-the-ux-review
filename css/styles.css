@@ -2247,14 +2247,12 @@ footer {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     gap: 80px;
     margin-bottom: 60px;
 }
-
 .footer-brand {
     max-width: 480px;
 }
